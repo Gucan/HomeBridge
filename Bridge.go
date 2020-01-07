@@ -9,8 +9,9 @@ import (
 #include<stdlib.h>
 char CMD[40];
 int init(int p) {
-	snprintf(CMD,40,"echo %d > /sys/class/gpio/export && echo out > /sys/class/gpio/gpio%d/direction",p,p);
-	return system(CMD);
+	char C[80];
+	snprintf(C,80,"echo %d > /sys/class/gpio/export && echo out > /sys/class/gpio/gpio%d/direction",p,p);
+	return system(C);
 }
 int set(int p,int v) {
 	snprintf(CMD,40,"echo %d > /sys/class/gpio/gpio%d/value",v,p);
