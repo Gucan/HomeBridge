@@ -26,7 +26,7 @@ func main() {
 		C.init(PIN[i])
 	}
 
-	bridge := accessory.New(accessory.Info{Name:"Bridge",Manufacturer:"Gucan",SerialNumber:"GCBRIDGE",Model:"BR"},accessory.TypeBridge)
+	bridge := accessory.New(accessory.Info{Name:"Gucan-Bridge",Manufacturer:"Gucan",SerialNumber:"GCBRIDGE",Model:"BR"},accessory.TypeBridge)
 	container := accessory.NewContainer()
 
 	for i:=0;i<len(PIN);i++ {
