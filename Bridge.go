@@ -17,6 +17,9 @@ int set(int p,int v) {
 	snprintf(CMD,40,"echo %d > /sys/class/gpio/gpio%d/value",v,p);
 	return system(CMD);
 }
+int get(int p) {
+	snprintf(CMD,40,"cat /sys/class/gpio/gpio%d/value|grep 1",p);
+	return system(CMD)
 */
 import "C"
 func main() {
