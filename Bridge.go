@@ -2,7 +2,7 @@ package main
 import (
 	"github.com/brutella/hc"
 	"github.com/brutella/hc/accessory"
-	"time"
+	//"time"
 )
 /*
 #include<stdio.h>
