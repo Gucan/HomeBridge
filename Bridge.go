@@ -24,8 +24,8 @@ int get(int p) {
 */
 import "C"
 func main() {
-	PIN :=[]C.int{148,149,150,151,152,153,154,155}
-	NAME:=[]string{"插孔1","插孔2","插孔3","插孔4","插孔5","插孔6","插孔7","插孔8"}
+	PIN :=[]C.int{12,11,1,0,3,15,16,14,198,199,7,19,18,2,13,10}
+	NAME:=[]string{"插孔1","插孔2","插孔3","插孔4","插孔5","插孔6","插孔7","插孔8","插孔9","插孔10","插孔11","插孔12","插孔13","插孔14","插孔15","插孔16"}
 	for i:=0;i<len(PIN);i++ {
 		C.init(PIN[i])
 	}
@@ -37,11 +37,11 @@ func main() {
 		P:=PIN[i]
 		N:=NAME[i]
 		acc := accessory.NewSwitch(accessory.Info{Name:N,Manufacturer:"Gucan",SerialNumber:"GCSWITCH",Model:"A"})
-		acc.Switch.On.OnValueRemoteUpdate(func(on bool) { if on == true { C.set(P,1) } else { print(P,0) } })
+		acc.Switch.On.OnValueRemoteUpdate(func(on bool) { if on == true { C.set(P,1) } else { C.set(P,0) } })
 		container.AddAccessory(acc.Accessory)
 	}
 
-	config := hc.Config{Pin:"52037521",Port:"12345",StoragePath:"./db"}
+	config := hc.Config{Pin:"52037521",Port:"12345",StoragePath:"/usr/data"}
 	t, err := hc.NewIPTransport(config, bridge, container.Accessories...)
 	if err != nil {
 		print(err)
