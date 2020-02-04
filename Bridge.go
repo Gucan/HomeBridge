@@ -46,15 +46,15 @@ func main() {
 		print(err)
 	}
 
-	go func() {
-		for y:=0;y<len(PIN);y++ {
-			//on1 := !acc1.Switch.On.GetValue()
-			//if on1 == true { print("acc1 is on\n") } else { print("acc1 is off\n") }
-			acc1.Switch.On.SetValue(on1)
-	
-			time.Sleep(1*time.Second)
-		}
-	}()
+	//go func() {
+	//	for y:=0;y<len(PIN);y++ {
+	//		//on1 := !acc1.Switch.On.GetValue()
+	//		//if on1 == true { print("acc1 is on\n") } else { print("acc1 is off\n") }
+	//		acc1.Switch.On.SetValue(on1)
+	//
+	//		time.Sleep(1*time.Second)
+	//	}
+	//}()
 
 	hc.OnTermination(func() {
 		t.Stop()
