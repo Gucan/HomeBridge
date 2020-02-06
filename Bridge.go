@@ -57,9 +57,9 @@ func main() {
 	//	}
 	//}()
 
-	hc.OnTermination(func() {
-		t.Stop()
-	})
+	//hc.OnTermination(func() {
+	//	t.Stop()
+	//})
 
 	t.Start()
 }
