@@ -25,4 +25,6 @@ acc.Lightbulb.Brightness.OnValueRemoteUpdate(func(value int) { print("a1 light "
 acc := accessory.NewLightbulb(accessory.Info{Name:"Lightbulb",Manufacturer:"Gucan",SerialNumber:"GCLIGHTBULB",Model:"LB"})
 acc.Lightbulb.On.OnValueRemoteUpdate(func(on bool) { if on == true { print("a1 on\n") } else { print("a1 off\n") } })
 
-插座 or 出口 outlet
+插座 outlet
+acc := accessory.NewOutlet(accessory.Info{Name:"插座",Manufacturer:"Gucan",SerialNumber:"GCSWITCH",Model:"SI"})
+acc.Outlet.On.OnValueRemoteUpdate(func(on bool) { if on == true { print("a1 on\n") } else { print("a1 off\n") } })
