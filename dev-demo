@@ -12,11 +12,17 @@ acc := accessory.NewSwitch(accessory.Info{Name:"Switch",Manufacturer:"Gucan",Ser
 acc.Switch.On.OnValueRemoteUpdate(func(on bool) { if on == true { print("a1 on\n") } else { print("a1 off\n") } })
 hc.NewIPTransport(config, acc.Accessory)
 
-Switch
+开关 Switch
 acc := accessory.NewSwitch(accessory.Info{Name:"Switch",Manufacturer:"Gucan",SerialNumber:"GCSWITCH",Model:"SI"})
 acc.Switch.On.OnValueRemoteUpdate(func(on bool) { if on == true { print("a1 on\n") } else { print("a1 off\n") } })
 
-Lightbulb
+彩色灯泡 ColoredLightbulb
 acc := accessory.NewColoredLightbulb(accessory.Info{Name:"Lightbulb",Manufacturer:"Gucan",SerialNumber:"GCLIGHTBULB",Model:"LB"})
 acc.Lightbulb.On.OnValueRemoteUpdate(func(on bool) { if on == true { print("a1 on\n") } else { print("a1 off\n") } })
 acc.Lightbulb.Brightness.OnValueRemoteUpdate(func(value int) { print("a1 light "value"\n") })
+
+灯泡 Lightbulb
+acc := accessory.NewLightbulb(accessory.Info{Name:"Lightbulb",Manufacturer:"Gucan",SerialNumber:"GCLIGHTBULB",Model:"LB"})
+acc.Lightbulb.On.OnValueRemoteUpdate(func(on bool) { if on == true { print("a1 on\n") } else { print("a1 off\n") } })
+
+插座 or 出口 outlet
