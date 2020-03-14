@@ -1,3 +1,17 @@
+config
+config := hc.Config{Pin:"52037521",Port:"12345",StoragePath:"./db"}
+
+Bridge
+bridge := accessory.New(accessory.Info{Name:"Gucan-Bridge",Manufacturer:"Gucan",SerialNumber:"GCBRIDGE",Model:"BR"},accessory.TypeBridge)
+container := accessory.NewContainer()
+  container.AddAccessory(acc.Accessory)
+hc.NewIPTransport(config, bridge, container.Accessories...)
+
+Accessory
+acc := accessory.NewSwitch(accessory.Info{Name:"Switch",Manufacturer:"Gucan",SerialNumber:"GCSWITCH",Model:"SI"})
+acc.Switch.On.OnValueRemoteUpdate(func(on bool) { if on == true { print("a1 on\n") } else { print("a1 off\n") } })
+hc.NewIPTransport(config, acc.Accessory)
+
 Switch
 acc := accessory.NewSwitch(accessory.Info{Name:"Switch",Manufacturer:"Gucan",SerialNumber:"GCSWITCH",Model:"SI"})
 acc.Switch.On.OnValueRemoteUpdate(func(on bool) { if on == true { print("a1 on\n") } else { print("a1 off\n") } })
