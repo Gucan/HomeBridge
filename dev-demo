@@ -28,3 +28,4 @@ acc.Lightbulb.On.OnValueRemoteUpdate(func(on bool) { if on == true { print("a1 o
 插座 outlet
 acc := accessory.NewOutlet(accessory.Info{Name:"插座",Manufacturer:"Gucan",SerialNumber:"GCSWITCH",Model:"SI"})
 acc.Outlet.On.OnValueRemoteUpdate(func(on bool) { if on == true { print("a1 on\n") } else { print("a1 off\n") } })
+acc.Outlet.OutletInUse.SetValue(true)
