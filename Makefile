@@ -9,9 +9,9 @@ all:
 	@arm-linux-gnueabihf-strip Accessory
 install: all
 	@echo "  INST\tBridge"
-	@install -m 0755 Bridge ../orangepi_zero/Bridge
+	@install -m 0755 Bridge ../orangepi_zero/tools/Bridge
 	@echo "  INST\tAccessory"
-	@install -m 0755 Accessory ../orangepi_zero/Accessory
+	@install -m 0755 Accessory ../orangepi_zero/tools/Accessory
 clean:
 	@echo "  CL\tBridge"
 	@rm Bridge
