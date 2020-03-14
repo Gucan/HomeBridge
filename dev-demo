@@ -19,8 +19,9 @@ acc.Switch.On.OnValueRemoteUpdate(func(on bool) { if on == true { print("a1 on\n
 彩色灯泡 ColoredLightbulb
 acc := accessory.NewColoredLightbulb(accessory.Info{Name:"Lightbulb",Manufacturer:"Gucan",SerialNumber:"GCLIGHTBULB",Model:"LB"})
 acc.Lightbulb.On.OnValueRemoteUpdate(func(on bool) { if on == true { print("a1 on\n") } else { print("a1 off\n") } })
-acc.Lightbulb.Brightness.OnValueRemoteUpdate(func(v int) { print("a1 light "v"\n") })
-acc.Lightbulb.Hue.OnValueRemoteUpdate(func(v float64) { print("a1 hue "v"\n") })
+acc.Lightbulb.Brightness.OnValueRemoteUpdate(func(v int) { print("a1 Brightness "v"\n") })
+acc.Lightbulb.Saturation.OnValueRemoteUpdate(func(v int) { print("a1 Saturation "v"\n") })
+acc.Lightbulb.Hue.OnValueRemoteUpdate(func(v float64) { print("a1 Hue "v"\n") })
 
 灯泡 Lightbulb
 acc := accessory.NewLightbulb(accessory.Info{Name:"Lightbulb",Manufacturer:"Gucan",SerialNumber:"GCLIGHTBULB",Model:"LB"})
