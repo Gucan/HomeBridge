@@ -32,6 +32,7 @@ func main() {
 
 	bridge := accessory.New(accessory.Info{Name:"Gucan-Bridge",Manufacturer:"Gucan",SerialNumber:"GCBRIDGE",Model:"BR"},accessory.TypeBridge)
 	container := accessory.NewContainer()
+	container.AddAccessory(accessory.NewSwitch(accessory.Info{Name:"TestDEV",Manufacturer:"Gucan",SerialNumber:"GCSWITCH",Model:"A"}).Accessory)
 
 	for i:=0;i<len(PIN);i++ {
 		P:=PIN[i]
