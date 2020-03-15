@@ -4,6 +4,9 @@ import (
 	"github.com/brutella/hc"
 	"github.com/brutella/hc/accessory"
 )
+/*
+*/
+import "C"
 
 func main() {
 
